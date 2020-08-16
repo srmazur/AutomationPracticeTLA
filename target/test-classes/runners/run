@@ -4,10 +4,10 @@
 <suite name="Login Page">
     <test name="Standard user test">
         <classes>
-            <class name="tests.-------">
+            <class name="tests.HomePageTest">
                 <methods>
-                    <include name="verifyLogInStandardUser"/>
-                    <include name="verifyLockedUser"/>
+                    <include name="verifyTitle"/>
+                    <include name=""/>
                 </methods>
             </class>
         </classes>
