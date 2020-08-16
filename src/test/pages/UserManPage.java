@@ -11,37 +11,36 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomePage extends BasePage {
+public class UserManPage extends BasePage {
     protected WebDriver driver;
 
-    public HomePage(WebDriver driver) {
+    public UserManPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//title")
-    public WebElement title;
 
-    @FindBy(id = "title")
-    public WebElement mainHeader;
 
     @FindBy(xpath = "//a[text()='User-Mgt']")
     public WebElement user_mgt;
 
-    @FindBy(id = "adminPass")
-    public WebElement passwordField;
+    @FindBy(xpath = "//a[text()='Login']")
+    public WebElement login_btn;
 
-    @FindBy(css = "a.navbar-brand.ml-3")
-    public List<WebElement> list_of_elements;
+    @FindBy(id = "access-db-btn")
+    public WebElement access_btn;
 
-    @FindBy(linkText = "Synchronization")
-    public WebElement navBtn_synchronization;
+    @FindBy(className = "form-control")
+    public List<WebElement> form_list;
+
+    //a[text()='Login']
 
 
 
 
 
-        }
+
+}
 
 

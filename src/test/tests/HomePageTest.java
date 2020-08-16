@@ -27,11 +27,16 @@ public class HomePageTest extends BaseTest {
         Assert.assertEquals(getDriver().getTitle(), "TLA Automation");
     }
     @Test(testName = "Verify Vesability" , description = "This test validating vesability")
-    public void VerefVes(){
-        for (int i = 0 ; i <homePage.list_of_elements.size();i++ ){
+    public void VerefVes() {
+        for (int i = 0; i < homePage.list_of_elements.size(); i++) {
             Assert.assertTrue(homePage.list_of_elements.get(i).isDisplayed());
+        }
+    }
+        @Test(testName = "Verify Title", description = "Verifing Title Of User Maneger page")
+                public void titleUser(){
+        homePage.user_mgt.click();
+        Assert.assertEquals(getDriver().getTitle(),"Register New User");
 
         }
 
-    }
     }
