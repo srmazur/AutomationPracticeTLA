@@ -21,7 +21,6 @@ public class UserManPageTest extends BaseTest {
 
     @BeforeMethod(alwaysRun = true)
     public void setUp(ITestResult result, Method method) {
-        super.setUp(method, result);
         homePage = new UserManPage(getDriver());
         homePage.user_mgt.click();
     }
@@ -54,13 +53,25 @@ for(WebElement e : homePage.form_list){
 for (int i = 0 ; i < homePage.form_list.size(); i++){
         Assert.assertEquals(homePage.form_list.get(i).getText() , actual.get(i));
         }
+        screenshot.takeScreenshotAndLog();
 
     }
     @Test(testName = "Verify Table" , description = "verifying data table is empty")
     public void Table(){
-      for(int i = 1 ; i<homePage.list_table.size();i++){
-          Assert.assertEquals(homePage.form_list.get(i).getText(),"");
+      for(int i = 1 ; i<homePage.list_table.size();i++){ Assert.assertEquals(homePage.form_list.get(i).getText(),"");
+          screenshot.takeScreenshotAndLog();
       }
+    }
+    @Test
+    public void VerifyFormFill(){
+        homePage.fillingFildes();
+        screenshot.takeScreenshotAndLog();
+        homePage.subb.click();
+        for(int i = 0; i<homePage.tableres.size();i++){
+           Assert.assertTrue((homePage.tableres.get(i).getText().length()>0));
+        }
+            screenshot.takeScreenshotAndLog();
+
     }
 
 }

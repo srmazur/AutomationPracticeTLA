@@ -5,7 +5,7 @@
         <protocol>https</protocol>
         <theme>dark</theme>
         <documentTitle>TLA</documentTitle>
-        <reportName>Sauce Demo Tests</reportName>
+        <reportName>TLA Practice</reportName>
         <reportHeadline></reportHeadline>
         <dateFormat>yyyy-MM-dd</dateFormat>
         <timeFormat>HH:mm:ss</timeFormat>

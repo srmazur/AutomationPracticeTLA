@@ -1,11 +1,13 @@
 package pages;
 
 import base.BasePage;
+import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -36,6 +38,22 @@ public class UserManPage extends BasePage {
 
     @FindBy(xpath = "//table[@id = 'list-table']//tr")
     public List <WebElement >list_table;
+
+    @FindBy(xpath = "//*[@id='submit-btn']")
+    public WebElement subb;
+
+    @FindBy(xpath = "//*[@id='list-table']/tbody/tr/td")
+    public  List<WebElement> tableres;
+
+    public void fillingFildes(){
+        Faker faker = new Faker();
+       form_list.get(0).sendKeys(faker.name().firstName());
+       form_list.get(1).sendKeys(faker.name().lastName());
+       form_list.get(2).sendKeys(faker.phoneNumber().cellPhone());
+       form_list.get(3).sendKeys(faker.internet().emailAddress());
+        Select role = new Select(form_list.get(4));
+       role.selectByIndex(1);
+    }
 
     //a[text()='Login']
 
