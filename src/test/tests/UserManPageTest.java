@@ -56,5 +56,11 @@ for (int i = 0 ; i < homePage.form_list.size(); i++){
         }
 
     }
+    @Test(testName = "Verify Table" , description = "verifying data table is empty")
+    public void Table(){
+      for(int i = 1 ; i<homePage.list_table.size();i++){
+          Assert.assertEquals(homePage.form_list.get(i).getText(),"");
+      }
+    }
 
 }

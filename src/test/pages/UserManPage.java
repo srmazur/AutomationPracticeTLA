@@ -34,6 +34,9 @@ public class UserManPage extends BasePage {
     @FindBy(className = "form-control")
     public List<WebElement> form_list;
 
+    @FindBy(xpath = "//table[@id = 'list-table']//tr")
+    public List <WebElement >list_table;
+
     //a[text()='Login']
 
 
