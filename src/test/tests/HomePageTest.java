@@ -38,7 +38,7 @@ public class HomePageTest extends BaseTest {
                 public void titleUser(){
         homePage.user_mgt.click();
         Assert.assertEquals(getDriver().getTitle(),"Register New User");
-        screenshot.takeScreenshotAndLog();
+
         }
 
     }

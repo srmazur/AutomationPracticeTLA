@@ -40,7 +40,7 @@ public class BaseTest {
         initializeDriver(ConfigReader.readProperty("browser", propertyPath));
 
         extentTest = extentReports.startTest((this.getClass().getSimpleName() + " : " + method.getName()), method.getName());
-        extentTest.assignAuthor("Tester");
+        extentTest.assignAuthor("Tester Serge");
         extentTest.assignCategory(suiteName);
         extentTest.log(LogStatus.INFO, result.getMethod().getDescription());
 
