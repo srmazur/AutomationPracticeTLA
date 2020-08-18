@@ -26,4 +26,10 @@ public class UserD8Page extends BasePage {
     @FindBy(xpath = "//*[@id='list-table']/thead/tr/th")
     public List<WebElement> tablelist;
 
+    @FindBy(xpath = "//*[@id='list-table']/tbody/tr/td/div/button[1]")
+    public List<WebElement>  dellitbnt ;
+
+    @FindBy(xpath = "//*[@id='list-table']/tbody/tr/td[1]")
+    public List<WebElement>  tableresolt;
+
 }

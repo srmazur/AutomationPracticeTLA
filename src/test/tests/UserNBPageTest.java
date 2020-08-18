@@ -45,5 +45,12 @@ public class UserNBPageTest extends BaseTest {
         }
             screenshot.takeScreenshotAndLog();
         }
+    @Test(testName = "Verify Btn", description = "Verifying if btn is not present for 3 items")
+    public void BntPressent () {
+
+        Assert.assertEquals((homePage.tableresolt.size()-homePage.dellitbnt.size()),3);
+        screenshot.takeScreenshotAndLog();
+    }
+
     }
 
