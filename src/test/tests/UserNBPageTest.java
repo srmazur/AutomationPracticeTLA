@@ -34,9 +34,16 @@ public class UserNBPageTest extends BaseTest {
     }
         @Test(testName = "Verify Title", description = "Verifying Title Of User Manager page")
         public void titleUser () {
-
             Assert.assertEquals(getDriver().getTitle(), "User DB");
-
+            screenshot.takeScreenshotAndLog();
+        }
+        @ Test(testName = "Verify Table ", description = "Verifying Table")
+    public void VerifyTable(){
+        for (int i = 0 ; i <homePage.tablelist.size(); i++) {
+            Assert.assertTrue(homePage.tablelist.get(i).isEnabled());
+            System.out.println(homePage.tablelist.get(i).getText());
+        }
+            screenshot.takeScreenshotAndLog();
         }
     }
 
