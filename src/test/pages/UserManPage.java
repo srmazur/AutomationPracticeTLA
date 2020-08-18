@@ -2,7 +2,6 @@ package pages;
 
 import base.BasePage;
 import com.github.javafaker.Faker;
-import helpers.Pojo;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -44,15 +43,24 @@ public class UserManPage extends BasePage {
     public WebElement subb;
 
     @FindBy(xpath = "//*[@id='list-table']/tbody/tr/td")
-    public  List<WebElement> tableres;
+    public  List<WebElement> tableresolt;
+
+    @FindBy(xpath = "/*[@id='list-table']/thead/tr/th")
+    public  List<WebElement> tableheader;
+
+    @FindBy(xpath = "//*[@id='clear-btn']")
+    public WebElement clearbnt;
+
+    @FindBy(xpath = "//*[@id='submit-table-btn']")
+    public WebElement subbtn;
 
     public void fillingFildes(){
-        Pojo p = new Pojo();
         Faker faker = new Faker();
-       form_list.get(0).sendKeys();
-       form_list.get(1).sendKeys(p.getFirstName());
-       form_list.get(2).sendKeys(p.getLastName());
-       form_list.get(3).sendKeys(p.getEmail());
+
+       form_list.get(0).sendKeys(faker.name().firstName());
+       form_list.get(1).sendKeys(faker.name().lastName());
+       form_list.get(2).sendKeys(faker.phoneNumber().cellPhone());
+       form_list.get(3).sendKeys(faker.internet().emailAddress());
         Select role = new Select(form_list.get(4));
        role.selectByIndex(1);
     }

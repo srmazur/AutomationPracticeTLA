@@ -4,11 +4,7 @@
 <suite name="Login Page">
     <test name="Standard user test">
         <classes>
-            <class name="tests.HomePageTest">
-                <methods>
-                    <include name="verifyTitle"/>
-                    <include name=""/>
-                </methods>
+            <class name="tests.UserManPageTest">
             </class>
         </classes>
     </test>
